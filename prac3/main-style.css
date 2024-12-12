@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Oswald', 'sans-serif';
+    background-color: antiquewhite;
+}
+.profile-img {
+    width: clamp(100px, 250px, 100%);
+    height: clamp(125px, 375px, 100%);
+}
+.profile-img:hover {
+    animation: spin 5s linear 0s infinite;
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+#home {
+    font-size: calc(1.375rem + 1.5vw);
+    transition: transform .2s ease;
+}
+.frontend__info {
+    background-color: inherit;
+    transition: background-color .5s ease-in-out;
+}
+.frontend__info:active {
+    background-color: tomato;
+}
+#home:hover {
+    transform: scale(1.1);
+}
+
+a {
+    transition: font-size 0.5s ease;
+}
+a:hover {
+    font-weight: 700;
+    color: orange !important;
+}
+a:active {
+    font-size: 26px;
+}
+
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-track {
+    background: inherit;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 30px;
+    border: 1px solid gray;
+}
+@media (max-width: 426px) {
+    aside {
+        display: none;
+    }
+    .main {
+        width: 100% !important  ;
+    }
+}
+video {
+    width: clamp(100px, 320px, 100%);
+}

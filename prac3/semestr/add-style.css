@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Oswald', 'sans-serif';
+    background-color: antiquewhite;
+}
+.hidden {
+    display: none;
+}
+iframe, .pdf-integrate, embed {
+    width: clamp(100px, 250px, 100%);
+}
+.table-2-lever {
+    background-color: #fff;
+    margin: 10px 0;
+}
+.unactive {
+    display: none;
+}
+.table-1 {
+    display: none;
+}
+.lessons-block__button {
+    transform: display .8s ease;
+}
+.lessons-block__button:active .table-1 {
+    display: block;
+}
+
+a {
+    transition: font-size 0.5s ease;
+}
+a:hover {
+    font-weight: 700;
+    color: orange !important;
+}
+a:active {
+    font-size: 26px;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-track {
+    background: inherit;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 30px;
+    border: 1px solid gray;
+}
+tr:hover:not(:first-of-type) {
+    background-color: green;
+}
+@media (max-width: 625px) {
+    aside {
+        display: none;
+    }
+    .main {
+        width: 100% !important;
+    }
+}

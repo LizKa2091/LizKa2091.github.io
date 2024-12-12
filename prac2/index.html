@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Портфолио</title>
+</head>
+<body>
+    <header class="bordered blurred">
+        <div class="header__left-side">
+            <img src="images/logo.jpg" alt="logo" width="40" height="40">
+            <p>Logo</p>
+        </div>
+        <div class="header__right-side">
+            <p>Группа ЭФБО-03-23</p>
+            <p>Калиновская Елизавета Вадимовна</p>
+        </div>
+    </header>
+    <nav class="bordered blurred">
+        <ul class="nav__items" id="ul1">
+            <li class="nav1__item"><a href='#'>Главная</a></li>
+            <li class="nav1__item"><a href='#'>Первый семестр</a></li>
+            <li class="nav1__item"><a href='#'>Второй семестр</a></li>
+            <li class="nav1__item"><a href='#'>Услуги</a></li>
+            <li class="nav1__item"><a href='#'>Авторизация</a></li>
+        </ul>
+    </nav>
+    <section id="main-section" class="blurred">
+        <aside class="bordered">
+            <nav>
+                <ul class="nav__items" id="ul2">
+                    <li class="nav2__item">Навигация по странице</li>
+                    <li class="nav2__item"><a href='#'>Фронтенд</a></li>
+                    <li class="nav2__item"><a href='#'>Бэкенд</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="bordered">
+            <h1>Разработка веб-приложений</h1>
+            <div class="cards">
+                <div class="card">
+                    <div class="card__inner bordered">
+                    </div>
+                    <p>Сайт-визитка</p>
+                    <button class="open-modal">Заказать</button>
+                </div>
+                <div class="card">
+                    <div class="card__inner bordered">
+                    </div>
+                    <p>Корпоративный сайт</p>
+                    <button class="open-modal">Заказать</button>
+                </div>
+                <div class="card">
+                    <div class="card__inner bordered">
+                    </div>
+                    <p>Интернет-магазин</p>
+                    <button class="open-modal">Заказать</button>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio unde saepe assumenda vitae temporibus fuga dolorem! Vel ex voluptate ullam pariatur molestias inventore omnis, cum minus quasi quia, cumque asperiores.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid blanditiis rerum corrupti eligendi minima maxime voluptas voluptatem repellat excepturi voluptatibus debitis, officia nisi ut quis quas architecto porro dolore eum!</p>
+        </main>
+    </section>
+    <section id="modal" class="modal-wrapper">
+        <div>
+            <h2>Разработка веб-приложения</h2>
+            <p>Заполните форму и мы обязательно свяжемся с вами
+                в ближайшее время для уточнения деталей
+            </p>
+            <form id="contact-form">
+                <div class="input-1">
+                    <label for="name">Как вас зовут</label>
+                    <input type="text" id="name" placeholder="например Иванов Иван Иванович">
+                </div>
+                <div class="input-2">
+                    <label for="email">Ваш e-mail</label>
+                    <input type="email" id="email" placeholder="test@mail.ru">
+                </div>
+                <div class="input-3">
+                    <label for="tel">Телефон</label>
+                    <input type="tel" id='tel' placeholder="+7 919 999 99 99">
+                </div>
+                <div class="input-4">
+                    <label for="region">Страна</label>
+                    <select name="select-region" id="region">
+                        <option value="russia">Россия</option>
+                        <option value="another">Другое</option>
+                    </select>
+                </div>
+                <div class="input-5">
+                    <label for="date">Дата</label>
+                    <input type="date" id="date">
+                </div>
+                <div class="input-6">
+                    <label for="comment">Комментарий</label>
+                    <textarea id="comment"></textarea>
+                </div>
+                <div class="input-7">
+                    <input type="checkbox" class="input-7__input" id="submit"><p>Согласен на обработку моих персональных
+                        данных
+                    </p>
+                </div>
+                <div class="input-8">
+                    <button type="submit">Отправить заявку</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <span class="close">X</span>
+        </div>
+    </section>
+    <footer class="bordered blurred">
+        <p>© Калиновская Елизавета Вадимовна, 2024</p>
+    </footer>
+    <script>
+        const modal = document.getElementById("modal");
+        const btn = document.querySelectorAll(".open-modal");
+        const span = document.getElementsByClassName("close")[0];
+        const form = document.getElementById("contact-form");
+        const blurredEls = document.getElementsByClassName('blurred');
+
+        btn.forEach(el => el.onclick = function() {
+            modal.style.display = 'flex';
+            for (let el of blurredEls) {
+                el.style.filter = 'blur(2px)';
+            }
+        });
+        span.onclick = function() {
+            modal.style.display = "none";
+            for (let el of blurredEls) {
+                el.style.filter = 'blur(0)';
+            }
+        };
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>

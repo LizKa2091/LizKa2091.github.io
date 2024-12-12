@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: 'Oswald', 'sans-serif';
+    background-color: antiquewhite;
+}
+.modal-wrapper {
+    width: clamp(182px, 400px, 50%);
+}
+#modal {
+    display: none;
+}
+
+a {
+    transition: font-size 0.5s ease;
+}
+a:hover:not(.carousel-control-prev):not(.carousel-control-next) {
+    font-weight: 700;
+    color: orange !important;
+}
+a:active {
+    font-size: 26px;
+}
+.close:hover {
+    cursor: pointer;
+}
+.form-status {
+    display: none;
+    color: green;
+}
+.form-status:hover {
+    background: linear-gradient(90deg, #00ff22, #ff3333);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textflow 5s linear infinite;
+}
+@keyframes textflow {
+    from {
+        background-position: 0% center
+    }         
+    to {
+        background-position: 200% center
+    }
+  }
+button:not(.accordion-button):not(.carousel-control-next):not(.carousel-control-prev):active {
+    width: 90px;
+    background-color: wheat;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-track {
+    background: inherit;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 30px;
+    border: 1px solid gray;
+}
